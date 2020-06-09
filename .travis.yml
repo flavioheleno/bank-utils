@@ -1,0 +1,31 @@
+dist: bionic
+language: php
+
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+  - nightly
+
+git:
+  depth: 5
+  quiet: true
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+
+cache:
+  timeout: 604800
+  directories:
+    - vendor
+
+before_install:
+  - sudo apt-get update > /dev/null
+
+install:
+  - composer install --ignore-platform-reqs
+
+notifications:
+  email: false
