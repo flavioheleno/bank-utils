@@ -51,8 +51,8 @@ final class Parser {
     $dueDate = (int)substr($line, 33, 4);
     $dueDate = DateTimeImmutable::createFromMutable(
       DateTime::createFromFormat(
-        'Y-m-d',
-        '1997-10-07',
+        'Y-m-d H:i:s',
+        '1997-10-07 00:00:00',
         new DateTimeZone('America/Sao_Paulo')
       )
     )->add(new DateInterval(sprintf('P%dD', $dueDate)));

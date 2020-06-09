@@ -143,6 +143,16 @@ BankUtils\Common\BankCode::getName('001');
 BankUtils\Common\BankCode::getUrl('001');
 ```
 
+## Contributing
+
+There are a few helper scripts that can be called by composer, such as:
+
+- Static Code Analysis: `php composer.phar run check`
+- Code Linting: `php composer.phar run lint`
+- Tests: `php composer.phar run test`
+
+**NOTE:** to run the *Code Linting*, you must download the ruleset from [here](https://github.com/flavioheleno/phpcs-ruleset/blob/master/ruleset.xml) first.
+
 ## License
 
 This library is licensed under the [MIT License](LICENSE).

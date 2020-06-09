@@ -15,7 +15,7 @@ final class Validator {
 
     $code = substr($block, 0, $blockSize);
     $code = strrev($code);
-    $code = str_split($code);
+    $code = array_map('intval', str_split($code));
 
     $sum = 0;
     foreach ($code as $index => $value) {
@@ -30,6 +30,9 @@ final class Validator {
     }
 
     $probe = 10 - ($sum % 10);
+    if ($probe === 10) {
+      $probe = 0;
+    }
 
     return $probe === $checkDigit;
   }
