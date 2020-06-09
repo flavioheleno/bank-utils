@@ -38,14 +38,14 @@
   },
   "scripts": {
     "check": [
-      "vendor/bin/phpstan analyse --level=8 --autoload-file=vendor/autoload.php src/ tests/"
+      "vendor/bin/phpstan analyse --level=8 --autoload-file=vendor/autoload.php src/ test/"
     ],
     "lint": [
       "vendor/bin/parallel-lint --exclude vendor .",
-      "vendor/bin/phpcs --standard=ruleset.xml src/ tests/"
+      "vendor/bin/phpcs --standard=ruleset.xml src/ test/"
     ],
     "test": [
-      "./vendor/bin/phpunit ./tests/ --coverage-html=./report/coverage/ --whitelist=./src/ --testdox-html=./report/testdox.html --disallow-test-output --process-isolation"
+      "./vendor/bin/phpunit ./test/ --coverage-html=./report/coverage/ --whitelist=./src/ --testdox-html=./report/testdox.html --disallow-test-output --process-isolation"
     ]
   }
 }
