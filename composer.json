@@ -2,6 +2,8 @@
   "name": "flavioheleno/bank-utils",
   "description": "Bank Utilities: CNAB Handling, Boleto Parsing and Validation",
   "type": "library",
+  "keywords": ["cnab", "boleto", "parser", "validator", "bank", "utilities"],
+  "homepage": "https://github.com/flavioheleno/bank-utils",
   "license": "mit",
   "authors": [
     {
