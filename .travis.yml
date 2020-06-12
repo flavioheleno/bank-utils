@@ -2,7 +2,6 @@ dist: bionic
 language: php
 
 php:
-  - 7.2
   - 7.3
   - 7.4
   - nightly
@@ -21,11 +20,10 @@ cache:
   directories:
     - vendor
 
-before_install:
-  - sudo apt-get update > /dev/null
-
 install:
   - composer install --ignore-platform-reqs
+
+script: composer run test
 
 notifications:
   email: false
