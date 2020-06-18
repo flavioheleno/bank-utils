@@ -92,24 +92,45 @@ A sample can be seen [here](src/Cnab/Provider/Febraban/Cnab240.php).
 ### Parsing a CNAB file
 
 ```php
-$file = '/path/to/file.cnab';
+$filePath = '/path/to/file.cnab';
 $provider = BankUtils\Cnab\Provider\Febraban\Cnab240::class;
 
-BankUtils\Cnab\Reader::fromFile($file, $provider);
+$cnabFile = BankUtils\Cnab\Reader::fromFile($filePath, $provider);
 
 ```
 
 Alternatively, you can also parse from a `string` or an `array`:
 
 ```php
-$file = '/path/to/file.cnab';
+$filePath = '/path/to/file.cnab';
 $provider = BankUtils\Cnab\Provider\Febraban\Cnab240::class;
 
-$str = file_get_contents($file);
-BankUtils\Cnab\Reader::fromString($str, $provider);
+$str = file_get_contents($filePath);
+$cnabFile = BankUtils\Cnab\Reader::fromString($str, $provider);
 
-$arr = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-BankUtils\Cnab\Reader::fromArray($arr, $provider);
+$arr = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$cnabFile = BankUtils\Cnab\Reader::fromArray($arr, $provider);
+```
+
+### Writing a CNAB file
+
+```php
+$cnabFile = new BankUtils\Cnab\Container\File(...);
+$filePath = '/path/to/file.cnab';
+$provider = BankUtils\Cnab\Provider\Febraban\Cnab240::class;
+
+$bool = BankUtils\Cnab\Writer::toFile($filePath, $cnabFile, $provider);
+```
+
+Alternatively, you can also write to a `string` or an `array`:
+
+```php
+$cnabFile = new BankUtils\Cnab\Container\File(...);
+$provider = BankUtils\Cnab\Provider\Febraban\Cnab240::class;
+
+$str = BankUtils\Cnab\Writer::toString($cnabFile, $provider);
+
+$arr = BankUtils\Cnab\Writer::toArray($cnabFile, $provider);
 ```
 
 ## Helpers
