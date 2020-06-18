@@ -96,7 +96,8 @@ class BatchTest extends TestCase {
     $this->assertSame($this->batch->header, $this->header);
     $this->assertEquals($this->batch->items, [$this->item]);
     $this->assertSame($this->batch->trailer, $this->trailer);
-    $this->expectException(RuntimeException::class, 'Undefined property "undef"');
+    $this->expectException(RuntimeException::class);
+    $this->expectExceptionMessage('Undefined property "undef"');
     $x = $this->batch->undef;
   }
 

@@ -38,7 +38,7 @@ final class Validator {
   }
 
   /**
-   * @param array<int,string> $blocks
+   * @param array<int, string> $blocks
    *
    * @return bool
    */

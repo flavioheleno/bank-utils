@@ -14,65 +14,65 @@ class BankCodeTest extends TestCase {
     $this->assertFalse(BankCode::validCode('000'));
   }
 
-  public function testValidCodeExceptionSmaller() {
+  public function testValidCodeExceptionSmaller(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::validCode('00');
   }
 
-  public function testValidCodeExceptionLarger() {
+  public function testValidCodeExceptionLarger(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::validCode('0000');
   }
 
-  public function testValidCodeExceptionInvalid() {
+  public function testValidCodeExceptionInvalid(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::validCode('abc');
   }
 
-  public function testGetName() {
+  public function testGetName(): void {
     $this->assertSame('Banco do Brasil S.A.', BankCode::getName('001'));
   }
 
-  public function testGetNameNotFoundException() {
+  public function testGetNameNotFoundException(): void {
     $this->expectException(RuntimeException::class);
     BankCode::getName('000');
   }
 
-  public function testGetNameExceptionSmaller() {
+  public function testGetNameExceptionSmaller(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::getName('00');
   }
 
-  public function testGetNameExceptionLarger() {
+  public function testGetNameExceptionLarger(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::getName('0000');
   }
 
-  public function testGetNameExceptionInvalid() {
+  public function testGetNameExceptionInvalid(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::getName('abc');
   }
 
-  public function testGetUrl() {
+  public function testGetUrl(): void {
     $this->assertSame('www.bb.com.br', BankCode::getUrl('001'));
   }
 
-  public function testGetUrlNotFoundException() {
+  public function testGetUrlNotFoundException(): void {
     $this->expectException(RuntimeException::class);
     BankCode::getUrl('000');
   }
 
-  public function testGetUrlExceptionSmaller() {
+  public function testGetUrlExceptionSmaller(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::getUrl('00');
   }
 
-  public function testGetUrlExceptionLarger() {
+  public function testGetUrlExceptionLarger(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::getUrl('0000');
   }
 
-  public function testGetUrlExceptionInvalid() {
+  public function testGetUrlExceptionInvalid(): void {
     $this->expectException(InvalidArgumentException::class);
     BankCode::getUrl('abc');
   }

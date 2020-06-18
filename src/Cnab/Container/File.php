@@ -13,7 +13,7 @@ class File implements Serializable {
    */
   private $header;
   /**
-   * @var array<int,\BankUtils\Cnab\Container\Batch>
+   * @var array<int, \BankUtils\Cnab\Container\Batch>
    */
   private $batches;
   /**
@@ -23,7 +23,7 @@ class File implements Serializable {
 
   /**
    * @param \BankUtils\Cnab\Container\Record $header
-   * @param array<int,\BankUtils\Cnab\Container\Batch> $batches
+   * @param array<int, \BankUtils\Cnab\Container\Batch> $batches
    * @param \BankUtils\Cnab\Container\Record $trailer
    */
   public function __construct(Record $header, array $batches, Record $trailer) {
@@ -49,7 +49,7 @@ class File implements Serializable {
   }
 
   /**
-   * @return array<int,\BankUtils\Cnab\Container\Batch>
+   * @return array<int, \BankUtils\Cnab\Container\Batch>
    */
   public function getBatches(): array {
     return $this->batches;
@@ -60,7 +60,7 @@ class File implements Serializable {
   }
 
   /**
-   * @return array<int,string>
+   * @return array<int, mixed>
    */
   public function getRaw(): array {
     $raw = [];
@@ -74,7 +74,7 @@ class File implements Serializable {
   }
 
   /**
-   * @return \BankUtils\Cnab\Container\Record|array<int,\BankUtils\Cnab\Container\Batch>|array<int,string>
+   * @return \BankUtils\Cnab\Container\Record|array<int, \BankUtils\Cnab\Container\Batch>|array<int, string>
    */
   public function __get(string $property) {
     switch ($property) {

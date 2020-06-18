@@ -9,12 +9,12 @@ use Serializable;
 
 class Item implements Iterator, Serializable {
   /**
-   * @var array<string,\BankUtils\Cnab\Container\Record>
+   * @var array<string, \BankUtils\Cnab\Container\Record>
    */
   private $segments;
 
   /**
-   * @param array<string,\BankUtils\Cnab\Container\Record> $segments
+   * @param array<string, \BankUtils\Cnab\Container\Record> $segments
    */
   public function __construct(array $segments) {
     $this->segments = $segments;
@@ -33,14 +33,14 @@ class Item implements Iterator, Serializable {
   }
 
   /**
-   * @return array<string,\BankUtils\Cnab\Container\Record>
+   * @return array<string, \BankUtils\Cnab\Container\Record>
    */
   public function getSegments(): array {
     return $this->segments;
   }
 
   /**
-   * @return array<int,string>
+   * @return array<int, mixed>
    */
   public function getRaw(): array {
     $raw = [];

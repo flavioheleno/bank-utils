@@ -20,7 +20,7 @@ class Reader {
 
   /**
    * @param string $lineContent
-   * @param array<string,string> $ruleMap
+   * @param array<string, string> $ruleMap
    * @param bool $keepRaw
    *
    * @return \BankUtils\Cnab\Container\Record
@@ -89,7 +89,7 @@ class Reader {
   }
 
   /**
-   * @param array<int,string> $fileContent
+   * @param array<int, string> $fileContent
    * @param string $providerClass
    *
    * @return \BankUtils\Cnab\Container\File

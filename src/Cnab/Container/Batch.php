@@ -13,7 +13,7 @@ class Batch implements Serializable {
    */
   private $header;
   /**
-   * @var array<int,\BankUtils\Cnab\Container\Item>
+   * @var array<int, \BankUtils\Cnab\Container\Item>
    */
   private $items;
   /**
@@ -23,7 +23,7 @@ class Batch implements Serializable {
 
   /**
    * @param \BankUtils\Cnab\Container\Record $header
-   * @param array<int,\BankUtils\Cnab\Container\Item> $items
+   * @param array<int, \BankUtils\Cnab\Container\Item> $items
    * @param \BankUtils\Cnab\Container\Record $trailer
    *
    * @return void
@@ -51,7 +51,7 @@ class Batch implements Serializable {
   }
 
   /**
-   * @return array<int,\BankUtils\Cnab\Container\Item>
+   * @return array<int, \BankUtils\Cnab\Container\Item>
    */
   public function getItems(): array {
     return $this->items;
@@ -62,7 +62,7 @@ class Batch implements Serializable {
   }
 
   /**
-   * @return array<int,string>
+   * @return array<int, array<int, array<int, string>|string>|string>
    */
   public function getRaw(): array {
     $raw = [];
@@ -77,7 +77,7 @@ class Batch implements Serializable {
   }
 
   /**
-   * @return \BankUtils\Cnab\Container\Record|array<int,\BankUtils\Cnab\Container\Item>|array<int,string>
+   * @return \BankUtils\Cnab\Container\Record|array<int, \BankUtils\Cnab\Container\Item>|array<int, string>
    */
   public function __get(string $property) {
     switch ($property) {

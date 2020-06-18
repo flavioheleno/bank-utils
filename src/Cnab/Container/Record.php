@@ -8,7 +8,7 @@ use Serializable;
 
 class Record implements Serializable {
   /**
-   * @var array<string,mixed>
+   * @var array<string, mixed>
    */
   protected $properties;
   /**
@@ -17,7 +17,7 @@ class Record implements Serializable {
   protected $rawContent;
 
   /**
-   * @param array<string,mixed> $properties
+   * @param array<string, mixed> $properties
    * @param string $rawContent
    */
   public function __construct(array $properties, string $rawContent) {

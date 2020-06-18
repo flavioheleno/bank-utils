@@ -38,11 +38,14 @@ class Cnab240 implements Provider {
   }
 
   public static function fileTrailer(): array {
+    return [];
   }
 
   public static function batchHeader(): array {
+    return [];
   }
 
   public static function batchTrailer(): array {
+    return [];
   }
 }

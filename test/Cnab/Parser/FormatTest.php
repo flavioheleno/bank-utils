@@ -9,32 +9,37 @@ use PHPUnit\Framework\TestCase;
 
 class FormatTest extends TestCase {
   public function testEmtpyFormat(): void {
-    $this->expectException(InvalidFormat::class, 'Invalid data format: ""');
-    $f = new Format('');
+    $this->expectException(InvalidFormat::class);
+    $this->expectExceptionMessage('Invalid data format: ""');
+    $f = Format::create('');
   }
 
   public function testInvalidFormat1(): void {
-    $this->expectException(InvalidFormat::class, 'Invalid data format: "A(001)"');
-    $f = new Format('A(001)');
+    $this->expectException(InvalidFormat::class);
+    $this->expectExceptionMessage('Invalid data format: "A(001)"');
+    $f = Format::create('A(001)');
   }
 
   public function testInvalidFormat2(): void {
-    $this->expectException(InvalidFormat::class, 'Invalid data format: "9(1)"');
-    $f = new Format('9(1)');
+    $this->expectException(InvalidFormat::class);
+    $this->expectExceptionMessage('Invalid data format: "9(1)"');
+    $f = Format::create('9(1)');
   }
 
   public function testInvalidFormat3(): void {
-    $this->expectException(InvalidFormat::class, 'Invalid data format: "X(001)V1"');
-    $f = new Format('X(001)V1');
+    $this->expectException(InvalidFormat::class);
+    $this->expectExceptionMessage('Invalid data format: "X(001)V1"');
+    $f = Format::create('X(001)V1');
   }
 
   public function testInvalidFormat4(): void {
-    $this->expectException(InvalidFormat::class, 'Invalid data format: "9(001)V01"');
-    $f = new Format('9(001)V01');
+    $this->expectException(InvalidFormat::class);
+    $this->expectExceptionMessage('Invalid data format: "9(001)V01"');
+    $f = Format::create('9(001)V01');
   }
 
   public function testAlpha(): void {
-    $f = new Format('X(003)');
+    $f = Format::create('X(003)');
     $this->assertSame($f->getType(), 'X');
     $this->assertFalse($f->isNumeric());
     $this->assertTrue($f->isAlpha());
@@ -43,7 +48,7 @@ class FormatTest extends TestCase {
   }
 
   public function testNumericInt(): void {
-    $f = new Format('9(001)');
+    $f = Format::create('9(001)');
     $this->assertSame($f->getType(), '9');
     $this->assertTrue($f->isNumeric());
     $this->assertFalse($f->isAlpha());
@@ -52,7 +57,7 @@ class FormatTest extends TestCase {
   }
 
   public function testNumericFloat(): void {
-    $f = new Format('9(001)V2');
+    $f = Format::create('9(001)V2');
     $this->assertSame($f->getType(), '9');
     $this->assertTrue($f->isNumeric());
     $this->assertFalse($f->isAlpha());

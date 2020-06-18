@@ -40,15 +40,17 @@ class ReaderTest extends TestCase {
       '',
       ' '
     ];
-    $this->expectException(RuntimeException::class, 'Line 1 is 1 bytes long, format requires 240 bytes.');
+    $this->expectException(RuntimeException::class);
+    $this->expectExceptionMessage('Line 2 is 1 bytes long, format requires 240 bytes.');
     Reader::fromArray($content, Cnab240::class);
   }
 
-  public function testInvalidRegisterType(): void {
+  public function testInvalidRecordType(): void {
     $content = [
       str_pad('ABCDEFGHIJKLMNOPQRSTUVXYZ', Cnab240::lineSize())
     ];
-    $this->expectException(InvalidRecord::class, 'Invalid register type "H" at line 1.');
+    $this->expectException(InvalidRecord::class);
+    $this->expectExceptionMessage('Invalid record type "H" at line 1.');
     Reader::fromArray($content, Cnab240::class);
   }
 
@@ -107,7 +109,8 @@ class ReaderTest extends TestCase {
   }
 
   public function testFileHeaderNotFound(): void {
-    $this->expectException(InvalidFile::class, 'File header not found.');
+    $this->expectException(InvalidFile::class);
+    $this->expectExceptionMessage('File header not found.');
     Reader::fromArray([], Cnab240::class);
   }
 

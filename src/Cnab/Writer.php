@@ -12,7 +12,7 @@ use RuntimeException;
 class Writer {
   /**
    * @param \BankUtils\Cnab\Container\Record $record
-   * @param array<string,string> $ruleMap
+   * @param array<string, string> $ruleMap
    *
    * @return string
    */
@@ -35,17 +35,18 @@ class Writer {
 
   /**
    * @param string $filePath
-   * @param \BankUtils\CNab\Container\File   $cnab
+   * @param \BankUtils\Cnab\Container\File $cnab
    * @param string $providerClass
    *
-   * @return int
+   * @return bool
    */
-  public static function toFile(string $filePath, File $cnab, string $providerClass): int {
-    return file_put_contents($filePath, self::toString($cnab, $providerClass));
+  public static function toFile(string $filePath, File $cnab, string $providerClass): bool {
+    $content = self::toString($cnab, $providerClass);
+    return file_put_contents($filePath, $content) === strlen($content);
   }
 
   /**
-   * @param \BankUtils\CNab\Container\File   $cnab
+   * @param \BankUtils\Cnab\Container\File $cnab
    * @param string $providerClass
    *
    * @return string
@@ -55,10 +56,10 @@ class Writer {
   }
 
   /**
-   * @param \BankUtils\CNab\Container\File   $cnab
+   * @param \BankUtils\Cnab\Container\File $cnab
    * @param string $providerClass
    *
-   * @return array<int,string>
+   * @return array<int, string>
    */
   public static function toArray(File $cnab, string $providerClass): array {
     $array = [];

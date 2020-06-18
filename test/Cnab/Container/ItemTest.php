@@ -35,7 +35,8 @@ class ItemTest extends TestCase {
 
   public function testGetSegment(): void {
     $this->assertEquals($this->item->getSegment('seg'), $this->record);
-    $this->expectException(RuntimeException::class, 'Undefined segment "undef"');
+    $this->expectException(RuntimeException::class);
+    $this->expectExceptionMessage('Undefined segment "undef"');
     $x = $this->item->getSegment('undef');
   }
 
@@ -54,7 +55,8 @@ class ItemTest extends TestCase {
 
   public function testDynamicGet(): void {
     $this->assertSame($this->item->seg, $this->record);
-    $this->expectException(RuntimeException::class, 'Undefined segment "undef"');
+    $this->expectException(RuntimeException::class);
+    $this->expectExceptionMessage('Undefined segment "undef"');
     $x = $this->item->undef;
   }
 

@@ -129,7 +129,8 @@ class FileTest extends TestCase {
     $this->assertSame($this->file->header, $this->fileHeader);
     $this->assertEquals($this->file->batches, [$this->batch]);
     $this->assertSame($this->file->trailer, $this->fileTrailer);
-    $this->expectException(RuntimeException::class, 'Undefined property "undef"');
+    $this->expectException(RuntimeException::class);
+    $this->expectExceptionMessage('Undefined property "undef"');
     $x = $this->file->undef;
   }
 

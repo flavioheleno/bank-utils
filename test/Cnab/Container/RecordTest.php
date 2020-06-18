@@ -27,7 +27,8 @@ class RecordTest extends TestCase {
 
   public function testDynamicGet(): void {
     $this->assertSame($this->record->a, 'b');
-    $this->expectException(RuntimeException::class, 'Undefined property "b"');
+    $this->expectException(RuntimeException::class);
+    $this->expectExceptionMessage('Undefined property "b"');
     $x = $this->record->b;
   }
 
