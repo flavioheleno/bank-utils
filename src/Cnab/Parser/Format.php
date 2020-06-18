@@ -28,7 +28,7 @@ class Format {
     return $cache[$format];
   }
 
-  public function __construct(string $format) {
+  private function __construct(string $format) {
     $matches = [];
     $regex = '/^(X\((?<strsize>[0-9]{3})\)|9\((?<numsize>[0-9]{3})\)(V(?<precision>[0-9]))?)$/i';
     if (preg_match($regex, $format, $matches) !== 1) {

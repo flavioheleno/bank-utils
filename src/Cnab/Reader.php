@@ -37,7 +37,7 @@ class Reader {
             'Failed to parse "%s" from position %d to %d (format: %s).',
             $name,
             $linePos,
-            $format->getSize(),
+            $linePos + $format->getSize(),
             $rawFormat
           )
         );
