@@ -64,7 +64,7 @@ $boleto->getDueDate();
 $boleto->getAmount();
 ```
 
-### Validating a typeable line
+### Validating a typable line
 
 ```php
 $line = '00190000090281913600966281313172600000000000000';
