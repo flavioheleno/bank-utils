@@ -9,7 +9,7 @@ composer require flavioheleno/bank-utils
 
 ## Boleto
 
-### Parsing a typeable line
+### Parsing a typable line
 
 ```php
 $line = '00190000090281913600966281313172600000000000000';
@@ -64,7 +64,7 @@ $boleto->getDueDate();
 $boleto->getAmount();
 ```
 
-### Validanting a typeable line
+### Validating a typeable line
 
 ```php
 $line = '00190000090281913600966281313172600000000000000';
@@ -177,3 +177,5 @@ There are a few helper scripts that can be called by composer, such as:
 ## License
 
 This library is licensed under the [MIT License](LICENSE).
+
+
