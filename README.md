@@ -1,4 +1,4 @@
-# bank-utils [![Build Status](https://travis-ci.com/flavioheleno/bank-utils.svg?branch=master)](https://travis-ci.com/flavioheleno/bank-utils) [![Maintainability](https://api.codeclimate.com/v1/badges/d778eb1514509d581876/maintainability)](https://codeclimate.com/github/flavioheleno/bank-utils/maintainability)
+# bank-utils [![Build Status](https://travis-ci.com/flavioheleno/bank-utils.svg?branch=master)](https://travis-ci.com/flavioheleno/bank-utils) [![Maintainability](https://api.codeclimate.com/v1/badges/d778eb1514509d581876/maintainability)](https://codeclimate.com/github/flavioheleno/bank-utils/maintainability) [![Total Downloads](https://poser.pugx.org/flavioheleno/bank-utils/downloads)](//packagist.org/packages/flavioheleno/bank-utils)
 Simple and straightforward Bank Utilities.
 
 ## Install with composer
