@@ -18,25 +18,25 @@ $boleto = BankUtils\Boleto\Parser::fromLine($line);
 // string(3) "001"
 $boleto->getIssuerBank();
 
-// int(9));
+// int(9)
 $boleto->getCurrency();
 
 // string(5) "00000"
 $boleto->getIssuerReserve1();
 
-// int(9)());
+// int(9)
 $boleto->getCheckDigit1();
 
 // string(10) "0281913600"
 $boleto->getIssuerReserve2();
 
- // int(9)());
+ // int(9)
 $boleto->getCheckDigit2();
 
 // string(10) "6628131317"
 $boleto->getIssuerReserve3();
 
- // int(2)());
+ // int(2)
 $boleto->getCheckDigit3();
 
 // int(6)
