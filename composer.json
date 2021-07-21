@@ -46,6 +46,8 @@
     "phpstan": "vendor/bin/phpstan analyse --level=max --autoload-file=vendor/autoload.php bin/ src/",
     "phpunit": "vendor/bin/phpunit ./tests/ --coverage-html=./report/coverage/ --whitelist=./src/ --testdox-html=./report/testdox.html --disallow-test-output --process-isolation",
     "psalm": "vendor/bin/psalm --taint-analysis",
+    "test-ci": "vendor/bin/phpunit ./tests/ --disallow-test-output --process-isolation",
+    "test-coverage": "vendor/bin/phpunit ./tests/ --whitelist=./src/ --coverage-clover=clover.xml",
     "test": [
       "@infection",
       "@lint",
@@ -63,6 +65,8 @@
     "phpstan": "Runs complete codebase static analysis",
     "phpunit": "Runs library test suite",
     "psalm": "Runs complete codebase taint analysis",
+    "test-ci": "Runs library test suite (for continuous integration)",
+    "test-coverage": "Runs test-coverage analysis",
     "test": "Runs all tests"
   }
 }

@@ -55,4 +55,13 @@ jobs:
       run: composer install --prefer-dist --no-progress --optimize-autoloader --no-interaction
 
     - name: Run PHPUnit test suite
-      run: composer run-script phpunit
+      run: composer run-script test-ci
+
+    - name: Publish code coverage
+      uses: paambaati/codeclimate-action@v2.7.5
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: composer run-script test-coverage
+        coverageLocations: |
+          ${{github.workspace}}/clover.xml:clover
