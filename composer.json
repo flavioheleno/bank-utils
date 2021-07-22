@@ -43,7 +43,7 @@
     "infection": "vendor/bin/infection",
     "lint": "vendor/bin/parallel-lint --exclude vendor .",
     "phpcs": "vendor/bin/phpcs --standard=ruleset.xml src/ tests/",
-    "phpstan": "vendor/bin/phpstan analyse --level=max --autoload-file=vendor/autoload.php bin/ src/",
+    "phpstan": "vendor/bin/phpstan analyse --level=max --autoload-file=vendor/autoload.php src/",
     "phpunit": "vendor/bin/phpunit ./tests/ --coverage-html=./report/coverage/ --whitelist=./src/ --testdox-html=./report/testdox.html --disallow-test-output --process-isolation",
     "psalm": "vendor/bin/psalm --taint-analysis",
     "test-ci": "vendor/bin/phpunit ./tests/ --disallow-test-output --process-isolation",
